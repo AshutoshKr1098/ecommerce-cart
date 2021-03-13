@@ -1,7 +1,7 @@
 const productReducer = (store = [], action) => {
   switch (action.type) {
-    case "FETCH_PRODUCT":
-      return [...store, action.payload];
+    case "FETCH_PRODUCTS":
+      return action.payload;
     default:
       return store;
   }
