@@ -1,0 +1,11 @@
+.displayCartPage {
+  display: grid;
+  grid-template-columns: 65% 35%;
+}
+.pricing {
+  margin: 30px;
+  padding:10px;
+  border: 1px solid #eee;
+  background-color: rgb(221, 166, 166);
+  height: 300px;
+}
