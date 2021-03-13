@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../../assets/styles/CartItem.css";
 const CartItem = (props) => {
-  const [quantity, setQuantity] = useState(1);
   return (
     <div className="cart_item_wrapper">
       <div className="cart_item__image">
@@ -12,19 +11,19 @@ const CartItem = (props) => {
         <p>Price: {Math.round(props.price)}$</p>
         <div className="cart_item__quantity">
           <span>Quantity</span>
-          <button className="ui orange button">{quantity}</button>
+          <button className="ui orange button">{props.quantity}</button>
         </div>
       </div>
       <div className="cart_item__changer">
         <button
           className="ui blue button"
-          onClick={() => setQuantity(quantity + 1)}
+          onClick={() => props.increase(props.id)}
         >
           +
         </button>
         <button
           className="ui red button"
-          onClick={() => setQuantity(quantity - 1)}
+          onClick={() => props.decrease(props.id)}
         >
           -
         </button>

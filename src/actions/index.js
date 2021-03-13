@@ -13,3 +13,15 @@ export const addToCart = (product) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
   };
 };
+
+export const increaseCartItem = (id) => {
+  return (dispatch) => {
+    dispatch({ type: "INCREASE_ITEM", payload: id });
+  };
+};
+
+export const decreaseCartItem = (id) => {
+  return (dispatch) => {
+    dispatch({ type: "DECREASE_ITEM", payload: id });
+  };
+};

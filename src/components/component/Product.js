@@ -6,6 +6,7 @@ const Product = (props) => {
       image: props.image,
       price: props.price,
       id: props.id,
+      quantity: 1,
     };
     props.addToCart(product);
   };

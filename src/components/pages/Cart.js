@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import "../../assets/styles/Cart.css";
 import CartItem from "../component/CartItem";
+import { increaseCartItem, decreaseCartItem } from "../../actions";
 const Carts = (props) => {
   const renderCartList = () => {
     return props.cart.map((item) => {
@@ -12,6 +13,9 @@ const Carts = (props) => {
             image={item.image}
             name={item.name}
             price={item.price}
+            increase={props.increaseCartItem}
+            decrease={props.decreaseCartItem}
+            quantity={item.quantity}
           />
         </div>
       );
@@ -25,7 +29,9 @@ const Carts = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state.cart);
+  //console.log(state.cart);
   return { cart: state.cart };
 };
-export default connect(mapStateToProps)(Carts);
+export default connect(mapStateToProps, { increaseCartItem, decreaseCartItem })(
+  Carts
+);
