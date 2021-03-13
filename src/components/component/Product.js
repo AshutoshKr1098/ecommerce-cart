@@ -5,6 +5,7 @@ const Product = (props) => {
       name: props.title,
       image: props.image,
       price: props.price,
+      id: props.id,
     };
     props.addToCart(product);
   };

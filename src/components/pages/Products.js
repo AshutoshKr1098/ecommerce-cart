@@ -15,6 +15,7 @@ class Products extends Component {
             image={product.image}
             title={product.title}
             price={product.price}
+            id={product.id}
             addToCart={this.props.addToCart}
           />
           ;
