@@ -3,7 +3,11 @@ import { connect } from "react-redux";
 import "../../assets/styles/Cart.css";
 import CartItem from "../component/CartItem";
 import CartPricing from "../component/CartPricing";
-import { increaseCartItem, decreaseCartItem } from "../../actions";
+import {
+  increaseCartItem,
+  decreaseCartItem,
+  removeCartItem,
+} from "../../actions";
 import "./Cart.css";
 const Carts = (props) => {
   const renderCartList = () => {
@@ -19,6 +23,7 @@ const Carts = (props) => {
                 price={item.price}
                 increase={props.increaseCartItem}
                 decrease={props.decreaseCartItem}
+                removeItem={props.removeCartItem}
                 quantity={item.quantity}
               />
             </div>
@@ -46,6 +51,8 @@ const mapStateToProps = (state) => {
   //console.log(state.cart);
   return { cart: state.cart };
 };
-export default connect(mapStateToProps, { increaseCartItem, decreaseCartItem })(
-  Carts
-);
+export default connect(mapStateToProps, {
+  increaseCartItem,
+  decreaseCartItem,
+  removeCartItem,
+})(Carts);

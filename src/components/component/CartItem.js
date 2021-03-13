@@ -27,7 +27,12 @@ const CartItem = (props) => {
         >
           -
         </button>
-        <button className="ui green button">Del</button>
+        <button
+          className="ui green button"
+          onClick={() => props.removeItem(props.id)}
+        >
+          Del
+        </button>
       </div>
     </div>
   );

@@ -25,3 +25,9 @@ export const decreaseCartItem = (id) => {
     dispatch({ type: "DECREASE_ITEM", payload: id });
   };
 };
+
+export const removeCartItem = (id) => {
+  return (dispatch) => {
+    dispatch({ type: "REMOVE_ITEM", payload: id });
+  };
+};
