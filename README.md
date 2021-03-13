@@ -8,3 +8,4 @@ This is a feature implementation of most common scenario while building an Ecomm
 2. Redux
 3. Axios
 4. React Router DOM
+5. SemanticUI
