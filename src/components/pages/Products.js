@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getProducts } from "../../actions";
+import { getProducts, addToCart } from "../../actions";
 import Product from "../component/Product";
 import "../../assets/styles/Products.css";
 class Products extends Component {
@@ -10,11 +10,12 @@ class Products extends Component {
   renderProducts = () => {
     return this.props.products.map((product) => {
       return (
-        <div className="product__card">
+        <div className="product__card" key={product.id}>
           <Product
             image={product.image}
             title={product.title}
             price={product.price}
+            addToCart={this.props.addToCart}
           />
           ;
         </div>
@@ -38,4 +39,4 @@ const mapStateToProps = (state) => {
   //console.log(state.product);
   return { products: state.product };
 };
-export default connect(mapStateToProps, { getProducts })(Products);
+export default connect(mapStateToProps, { getProducts, addToCart })(Products);

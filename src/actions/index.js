@@ -6,3 +6,10 @@ export const getProducts = () => {
     dispatch({ type: "FETCH_PRODUCTS", payload: products.data });
   };
 };
+
+export const addToCart = (product) => {
+  console.log("action called");
+  return (dispatch) => {
+    dispatch({ type: "ADD_TO_CART", payload: product });
+  };
+};

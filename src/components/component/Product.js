@@ -1,10 +1,18 @@
 import React from "react";
 const Product = (props) => {
+  const addToCartHandler = () => {
+    const product = {
+      name: props.title,
+      image: props.image,
+      price: props.price,
+    };
+    props.addToCart(product);
+  };
   return (
     <div>
-      <div class="ui card">
+      <div className="ui card">
         <div
-          class="image"
+          className="image"
           style={{ width: "100%", height: "350px", overflow: "hidden" }}
         >
           <img
@@ -13,17 +21,19 @@ const Product = (props) => {
             alt={props.title}
           />
         </div>
-        <div class="content" style={{ height: "80px" }}>
-          <div class="meta">
-            <strong class="date">Price:{Math.ceil(props.price)}$</strong>
+        <div className="content" style={{ height: "80px" }}>
+          <div className="meta">
+            <strong className="date">Price:{Math.ceil(props.price)}$</strong>
           </div>
-          <div class="description">{props.title}</div>
+          <div className="description">{props.title}</div>
         </div>
-        <div class="extra content">
-          <div class="ui buttons">
-            <button class="ui red button">Add to cart</button>
-            <div class="or"></div>
-            <button class="ui teal button">Detail</button>
+        <div className="extra content">
+          <div className="ui buttons">
+            <button className="ui red button" onClick={addToCartHandler}>
+              Add to cart
+            </button>
+            <div className="or"></div>
+            <button className="ui teal button">Detail</button>
           </div>
         </div>
       </div>
