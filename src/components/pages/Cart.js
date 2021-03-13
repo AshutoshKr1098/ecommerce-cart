@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import "../../assets/styles/Cart.css";
 import CartItem from "../component/CartItem";
 import CartPricing from "../component/CartPricing";
+import CartEmpty from "../component/CartEmpty";
 import {
   increaseCartItem,
   decreaseCartItem,
@@ -42,7 +43,7 @@ const Carts = (props) => {
   };
   return (
     <div className="cart">
-      {props.cart.length > 0 ? showCart() : <h1>No Item in cart</h1>}
+      {props.cart.length > 0 ? showCart() : <CartEmpty />}
     </div>
   );
 };
